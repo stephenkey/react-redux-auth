@@ -14,6 +14,8 @@ import Private from './pages/private/private';
 import { userConstants } from './constants/userConstants';
 import * as serviceWorker from './serviceWorker';
 
+import './assets/styles/app.scss';
+
 const rootElement = document.querySelector('#root')
 const user = localStorage.getItem('user');
 
