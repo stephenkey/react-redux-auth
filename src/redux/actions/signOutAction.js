@@ -1,8 +1,8 @@
 import { userConstants } from '../../constants/userConstants'
 
 export function signOutAction() {
-  localStorage.clear()
-  return {
-    type: userConstants.UNAUTHENTICATED
+  return dispatch => {
+    localStorage.clear()
+    dispatch({ type: userConstants.UNAUTHENTICATED })
   }
 }
