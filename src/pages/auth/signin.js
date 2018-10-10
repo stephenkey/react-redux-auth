@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { reduxForm } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
 import { signInAction } from '../../redux/actions/signInAction'
 import { Row, Col, Button, FormGroup, Label, Input, Alert } from 'reactstrap';
@@ -7,7 +7,9 @@ import './auth.scss';
 
 class Signin extends Component {
   submit = (values) => {
-    this.props.signInAction(values, this.props.history)
+    console.log('Form submitted')
+    console.log(values)
+    return this.props.signInAction(values, this.props.history)
   }
   
   errorMessage() {
@@ -34,11 +36,11 @@ class Signin extends Component {
           <form onSubmit={handleSubmit(this.submit)}>
             <FormGroup row>
               <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" id="email" placeholder="john@example.com" />
+              <Field name="email" component="input" type="text" placeholder="john@example.com" autoComplete="on" className="form-control" />
             </FormGroup>
             <FormGroup row>
               <Label for="examplePassword">Password</Label>
-              <Input type="password" name="password" id="password" placeholder="password" />
+              <Field name="password" component="input" type="password" placeholder="Password" autoComplete="on" className="form-control" />
             </FormGroup>
             <FormGroup row>
               <Button color="primary">Sign In</Button>
