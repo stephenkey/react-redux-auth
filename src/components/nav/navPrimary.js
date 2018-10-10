@@ -2,18 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { signOutAction } from '../../redux/actions/signOutAction'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 class NavPrimary extends Component {
   constructor(props) {
@@ -39,12 +28,12 @@ class NavPrimary extends Component {
   navbarLinks() {
     if (this.props.authenticated) {
       return [
-        <NavItem><NavLink tag={Link} to="/private">Private</NavLink></NavItem>,
-        <NavItem><NavLink onClick={this.signOut.bind(this)}>Sign out</NavLink></NavItem>
+        <NavItem key="dashboard"><NavLink tag={Link} to="/dashboard">Dashboard</NavLink></NavItem>,
+        <NavItem key="signout"><NavLink onClick={this.signOut.bind(this)}>Sign out</NavLink></NavItem>
       ];
     }
     return [
-      <NavItem><NavLink tag={Link} to="/signin">Sign In</NavLink></NavItem>
+      <NavItem key="signin"><NavLink tag={Link} to="/signin">Sign In</NavLink></NavItem>
     ];
   }
 

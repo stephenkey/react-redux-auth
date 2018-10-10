@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import { signInAction } from '../../redux/actions/signInAction'
+import { Row, Col, Button, FormGroup, Label, Input, Alert } from 'reactstrap';
 import './auth.scss';
 
 class Signin extends Component {
@@ -12,9 +13,9 @@ class Signin extends Component {
   errorMessage() {
     if (this.props.errorMessage) {
       return (
-        <div className="info-red">
+        <Alert color="danger">
           {this.props.errorMessage}
-        </div>
+        </Alert>
       );
     }
   }
@@ -22,25 +23,29 @@ class Signin extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="form">
-        <div className="container">
-          <h2>Sign In</h2>
-          <form onSubmit={ handleSubmit(this.submit) }>
-            <Field name="email"
-                   component="input"
-                   type="text"
-                   placeholder="Email" 
-            />
-            <Field name="password" 
-                   component="input"
-                   type="password"
-                   placeholder="Password" 
-            />
-            <button type="submit" className="blue">Sign In</button>
+      <Row className='mt-5'>
+        <Col sm='12' md={{ size: 6, offset: 3 }} lg={{ size: 4, offset: 4 }}>
+          <FormGroup row>
+            <h2>Sign In</h2>
+          </FormGroup>
+          <FormGroup row>
+            {this.errorMessage()}
+          </FormGroup>
+          <form onSubmit={handleSubmit(this.submit)}>
+            <FormGroup row>
+              <Label for="exampleEmail">Email</Label>
+              <Input type="email" name="email" id="email" placeholder="john@example.com" />
+            </FormGroup>
+            <FormGroup row>
+              <Label for="examplePassword">Password</Label>
+              <Input type="password" name="password" id="password" placeholder="password" />
+            </FormGroup>
+            <FormGroup row>
+              <Button color="primary">Sign In</Button>
+            </FormGroup>
           </form>
-          {this.errorMessage()}
-        </div>
-      </div>
+        </Col>
+      </Row>
     )
   }
 }
