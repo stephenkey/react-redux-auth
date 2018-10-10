@@ -43,7 +43,7 @@ class Signin extends Component {
               <Field name="password" component="input" type="password" placeholder="Password" autoComplete="on" className="form-control" />
             </FormGroup>
             <FormGroup row>
-              <Button color="primary">Sign In</Button>
+              <Button color="primary" type="submit">Sign In</Button>
             </FormGroup>
           </form>
         </Col>

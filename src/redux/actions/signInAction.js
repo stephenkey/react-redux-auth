@@ -8,7 +8,7 @@ export function signInAction({ email, password }, history) {
       console.log('Sign In')
       const res = await axios.post(`${appConstants.BASE_URL}/users/login`, { email, password })
       dispatch({ type: userConstants.AUTHENTICATED })
-      localStorage.setItem('user', res.data.token)
+      localStorage.setItem('access_token', res.data.token)
       history.push(appConstants.AFTER_SIGN_IN_ROUTE)
     } catch(error) {
       dispatch({

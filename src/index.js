@@ -10,9 +10,9 @@ import * as serviceWorker from './serviceWorker'
 import App from './components/app/app'
 
 const rootElement = document.querySelector('#root')
-const user = localStorage.getItem('user')
+const access_token = localStorage.getItem('access_token')
 
-if(user) {
+if(access_token) {
   store.dispatch({ type: userConstants.AUTHENTICATED })
 }
 
