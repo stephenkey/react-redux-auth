@@ -14,6 +14,7 @@ import Private from './pages/private/private';
 import { userConstants } from './constants/userConstants';
 import * as serviceWorker from './serviceWorker';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/app.scss';
 
 const rootElement = document.querySelector('#root')
