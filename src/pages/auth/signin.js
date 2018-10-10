@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
-import { signInAction } from '../../redux/actions/signInAction';
+import React, { Component } from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux'
+import { signInAction } from '../../redux/actions/signInAction'
 import './auth.scss';
 
 class Signin extends Component {
   submit = (values) => {
-    this.props.signInAction(values, this.props.history);
+    this.props.signInAction(values, this.props.history)
   }
   
   errorMessage() {
@@ -41,16 +41,16 @@ class Signin extends Component {
           {this.errorMessage()}
         </div>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return { errorMessage: state.auth.error }
 }
 
 const reduxFormSignin = reduxForm({
   form: 'signin'
-})(Signin);
+})(Signin)
 
-export default connect(mapStateToProps, {signInAction})(reduxFormSignin);
+export default connect(mapStateToProps, {signInAction})(reduxFormSignin)

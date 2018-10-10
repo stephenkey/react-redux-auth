@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './private.scss';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './private.scss'
 
 class Private extends Component {
   render() {
@@ -10,4 +10,4 @@ class Private extends Component {
   }
 }
 
-export default connect()(Private);
+export default connect()(Private)

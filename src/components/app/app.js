@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../../assets/styles/app.scss';
-import Router from '../../utils/router';
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.css'
+import '../../assets/styles/app.scss'
+import Router from '../../utils/router'
 
 class App extends Component {
   constructor() {
@@ -14,13 +16,13 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('load', () => {
-      this.setState({ loading: false });
-      setTimeout(() => this.setState({ loaded: true }), 500);
+      this.setState({ loading: false })
+      setTimeout(() => this.setState({ loaded: true }), 500)
     });
   }
 
   render() {
-    const { loaded, loading } = this.state;
+    const { loaded, loading } = this.state
     
     return (
       <div>
@@ -40,8 +42,9 @@ class App extends Component {
         </div>
         
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default withRouter(connect()(App))
+

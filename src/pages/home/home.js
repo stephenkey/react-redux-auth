@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './home.scss';
 
 class Home extends Component {
@@ -10,4 +10,4 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+export default connect()(Home)

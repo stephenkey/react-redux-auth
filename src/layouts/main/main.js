@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class MainLayout extends Component {
   render() {
@@ -13,4 +13,4 @@ class MainLayout extends Component {
   }
 }
 
-export default connect()(MainLayout);
+export default connect()(MainLayout)

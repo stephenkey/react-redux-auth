@@ -1,15 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch } from 'react-router-dom'
 
-import authRequired from '../utils/authRequired';
-import authRestricted from '../utils/authRestricted';
+import authRequired from '../utils/authRequired'
+import authRestricted from '../utils/authRestricted'
 
-import Home from '../pages/home/home';
-import Signin from '../pages/auth/signin';
-import Private from '../pages/private/private';
+import Home from '../pages/home/home'
+import Signin from '../pages/auth/signin'
+import Private from '../pages/private/private'
 
-import MainLayout from '../layouts/main/main';
+import MainLayout from '../layouts/main/main'
 
 const Router = () => (
   <MainLayout>
@@ -23,4 +23,4 @@ const Router = () => (
   </MainLayout>
 );
 
-export default connect()(Router);
+export default withRouter(connect()(Router))
