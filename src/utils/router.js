@@ -1,18 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import authRequired from './utils/authRequired';
-import authRestricted from './utils/authRestricted';
+import authRequired from '../utils/authRequired';
+import authRestricted from '../utils/authRestricted';
 
-import Home from './pages/home/home';
-import Signin from './pages/auth/signin';
-// import Signup from './pages/auth/signup';
-import Private from './pages/private/private';
+import Home from '../pages/home/home';
+import Signin from '../pages/auth/signin';
+import Private from '../pages/private/private';
 
-import MainWrapper from './MainWrapper';
+import MainLayout from '../layouts/main/main';
 
 const Router = () => (
-  <MainWrapper>
+  <MainLayout>
     <main>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -20,7 +20,7 @@ const Router = () => (
         <Route path="/private" component={authRequired(Private)} />
       </Switch>
     </main>
-  </MainWrapper>
+  </MainLayout>
 );
 
-export default Router;
+export default connect()(Router);
