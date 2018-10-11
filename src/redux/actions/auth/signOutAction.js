@@ -1,4 +1,4 @@
-import { userConstants } from '../../constants/userConstants'
+import { userConstants } from '../../../constants/userConstants'
 
 export function signOutAction() {
   return dispatch => {

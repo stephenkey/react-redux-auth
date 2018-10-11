@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { signOutAction } from '../../redux/actions/signOutAction'
+import { signOutAction } from '../../redux/actions/auth/signOutAction'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 class NavPrimary extends Component {

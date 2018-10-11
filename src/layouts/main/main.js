@@ -7,7 +7,7 @@ class MainLayout extends Component {
     return (
       <div className='light'>
         <NavPrimary />
-        <div className='container'>
+        <div className='container pt-3'>
           {this.props.children}
         </div>
       </div>

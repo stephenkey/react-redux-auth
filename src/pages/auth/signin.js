@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
-import { signInAction } from '../../redux/actions/signInAction'
+import { signInAction } from '../../redux/actions/auth/signInAction'
 import { Row, Col, Button, FormGroup, Label, Input, Alert } from 'reactstrap';
 import './auth.scss';
 

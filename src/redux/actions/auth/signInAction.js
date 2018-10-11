@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { appConstants } from '../../constants/appConstants'
-import { userConstants } from '../../constants/userConstants'
+import { appConstants } from '../../../constants/appConstants'
+import { userConstants } from '../../../constants/userConstants'
 
 export function signInAction({ email, password }, history) {
   return async (dispatch) => {
